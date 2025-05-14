@@ -8,9 +8,6 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.mewebstudio.slug.generator.SlugifySlugGenerator;
-import com.mewebstudio.springboot.jpa.slug.ISlugGenerator;
-import com.mewebstudio.springboot.jpa.slug.SlugUtil;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -30,12 +27,5 @@ public class AppConfig {
             .configure(MapperFeature.USE_STD_BEAN_NAMING, true);
 
         return objectMapper;
-    }
-
-    @Bean
-    public ISlugGenerator slugGenerator() {
-        SlugifySlugGenerator generator = new SlugifySlugGenerator();
-        SlugUtil.setGenerator(generator);
-        return generator;
     }
 }
