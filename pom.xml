@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.5</version>
+        <version>4.1.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mewebstudio</groupId>
@@ -27,10 +27,11 @@
         <url/>
     </scm>
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <ulid-creator.version>5.2.3</ulid-creator.version>
         <slugify.version>3.0.7</slugify.version>
-        <spring-boot-jpa-slug.version>0.1.5</spring-boot-jpa-slug.version>
+        <spring-boot-jpa-slug.version>0.1.6</spring-boot-jpa-slug.version>
+        <springdoc.version>3.0.3</springdoc.version>
     </properties>
     <dependencies>
         <dependency>
@@ -64,12 +65,7 @@
             <artifactId>spring-boot-jpa-slug</artifactId>
             <version>${spring-boot-jpa-slug.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
+<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
@@ -79,6 +75,11 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-scalar</artifactId>
+            <version>${springdoc.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
